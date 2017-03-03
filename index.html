@@ -18,69 +18,51 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <ul class="nav nav-tabs" id="interest_tabs">
-      <!--top level tabs-->
-      <li><a href="#all" data-toggle="tab">All</a></li>
-      <li><a href="#brands" data-toggle="tab">Brands</a></li>
-      <li><a href="#media" data-toggle="tab">Media</a></li>
-    </ul>
 
-    <!--top level tab content-->
-    <div class="tab-content">
-      <!--all tab menu-->
-      <div id="all" class="tab-pane">
-        <ul class="nav nav-tabs" id="all_tabs">
-          <li><a href="#all_popular" data-toggle="tab">Popular</a></li>
-          <li><a href="#all_unique" data-toggle="tab">Unique</a></li>
-        </ul>
-      </div>
-
-      <!--brands tab menu-->
-      <div id="brands" class="tab-pane">
-        <ul class="nav nav-tabs" id="brands_tabs">
-          <li><a href="#brands_popular" data-toggle="tab">Popular</a></li>
-          <li><a href="#brands_unique" data-toggle="tab">Unique</a></li>
-        </ul>
-      </div>
-
-      <!--media tab menu-->
-      <div id="media" class="tab-pane">
-        <ul class="nav nav-tabs" id="media_tabs">
-          <li><a href="#media_popular" data-toggle="tab">Popular</a></li>
-          <li><a href="#media_unique" data-toggle="tab">Unique</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!--all tab content-->
-    <div class="tab-content">
-      <div id="all_popular" class="tab-pane">
-        <i>all_popular interests go here</i>
-      </div>
-      <div id="all_unique" class="tab-pane">
-        <i>all_unique interests go here</i>
-      </div>
-    </div>
-
-    <!--brands tab content-->
-    <div class="tab-content">
-      <div id="brands_popular" class="tab-pane">
-        <i>brands_popular interests go here</i>
-      </div>
-      <div id="brands_unique" class="tab-pane">
-        <i>brands_unique interests go here</i>
-      </div>
-    </div>
-
-    <!--media tab content-->
-    <div class="tab-content">
-      <div id="media_popular" class="tab-pane">
-        <i>media_popular interests go here</i>
-      </div>
-      <div id="media_unique" class="tab-pane">
-        <i>media_unique interests go here</i>
+    <div class="tabbable boxed parentTabs">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#set1">Tab 1</a>
+        </li>
+        <li><a href="#set2">Tab 2</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade active in" id="set1">
+          <div class="tabbable">
+            <ul class="nav nav-pills nav-stacked">
+              <li class="active"><a href="#sub11">Tab 1.1</a>
+              </li>
+              <li><a href="#sub12">Tab 1.2</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade active in" id="sub11">
+                <p>Tab 1.1</p>
+              </div>
+              <div class="tab-pane fade" id="sub12">
+                <p>Tab 1.2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="set2">
+          <div class="tabbable">
+            <ul class="nav nav-pills nav-stacked">
+              <li class="active"><a href="#sub21">Tab 2.1</a>
+              </li>
+              <li><a href="#sub22">Tab 2.2</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade active in" id="sub21">
+                <p>Tab 2.1</p>
+              </div>
+              <div class="tab-pane fade" id="sub22">
+                <p>Tab 2.2</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -88,5 +70,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+     $("ul.nav-pills a").click(function (e) {
+       e.preventDefault();
+       $(this).tab('show');
+     });
+    </script>
   </body>
 </html>
