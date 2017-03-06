@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>您的浏览器禁止了脚本运行</title>
+    <script language="javascript" type="text/javascript">
+     window.onload=function()
+     {
+       document.getElementById('jscheck').style.display='none';
+       document.getElementById('normalcontent').style.display='';
+       if(!(document.cookie || navigator.cookieEnabled))
+         {
+           alert('cookie 未打开!');
+         }
+     };
+    </script>
+  </head>
+
+  <body>
+    <div id="jscheck">您的浏览器禁止了脚本运行,本系统无法启动!</div>
+    <div id="normalcontent" style="display:none;">这里是正文</div>
+  </body>
+
+</html>
